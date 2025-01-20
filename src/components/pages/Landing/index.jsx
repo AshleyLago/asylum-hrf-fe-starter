@@ -33,22 +33,32 @@ export const LandingPage = () => {
   };
 
   return (
-    <div className='flex-c w-[100vw] secondary-c'>
-      <div data-purpose="Graphs and Charts" className='flex justify-center gap-20 mb-6'>
-        <div className="flex flex-col items-center">
-          <img src={barGraph} alt={"Bar Graph"} className="object-contain w-100 h-60"/>
-          <p className='text-xl'>Search Grant Rates By Office</p>
-        </div>
-        <div className="flex flex-col items-center">
-          <img src={pieChart} alt={"Pie Chart"} className="object-contain w-90 h-60"/>
-          <p className='text-xl'>Search Grant Rates By Nationality</p>
-        </div>
-        <div className="flex flex-col items-center">
-          <img src={lineGraph} alt={"Line Graph"} className="object-contain w-100 h-60"/>
-          <p className='text-xl'>Search Grant Rates Over Time</p>
-        </div>
-      </div>
+    <div className="flex-c w-[100vw] secondary-c">
       
+      <section data-purpose="Landing Header" className="flex primary-c pt-4 pb-8">
+        <div className="flex-c mx-auto">
+          <h1 className="text-6xl mb-8 text-white">Asylum Office Grant Rate Tracker</h1>
+          <h3 className="text-white">The Asylum Office Grant Rate Tracker provides asylum seekers, researchers, policymakers, and the public an interactive tool to explore USCIS data on Asylum Office decisions</h3>
+        </div>
+      </section>
+
+      <section data-purpose="Graphs and Data Interaction" className='flex-c pt-10'>
+        <div className='flex justify-center m-14 gap-20 text-2xl'>
+          <div className="flex-c gap-3">
+            <img src={barGraph} alt={"Bar Graph"} className="h-[300px] w-[500px]"/>
+            <h3>Search Grant Rates By Office</h3>
+          </div>
+          <div className="flex-c gap-3">
+            <img src={pieChart} alt={"Pie Chart"} className="h-[300px] contain-content"/>
+            <h3>Search Grant Rates By Nationality</h3>
+          </div>
+          <div className="flex-c gap-3">
+            <img src={lineGraph} alt={"Line Graph"} className="h-[300px] w-[500px]"/>
+            <h3>Search Grant Rates Over Time</h3>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 };
