@@ -38,12 +38,15 @@ export const LandingPage = () => {
       <section data-purpose="Landing Header" className="flex primary-c pt-4 pb-8">
         <div className="flex-c mx-auto">
           <h1 className="text-6xl mb-8 text-white">Asylum Office Grant Rate Tracker</h1>
-          <h3 className="text-white">The Asylum Office Grant Rate Tracker provides asylum seekers, researchers, policymakers, and the public an interactive tool to explore USCIS data on Asylum Office decisions</h3>
+          <h3 className="text-white">
+            The Asylum Office Grant Rate Tracker provides asylum seekers, researchers, policymakers, 
+            and the public an interactive tool to explore USCIS data on Asylum Office decisions
+          </h3>
         </div>
       </section>
 
-      <section data-purpose="Graphs and Data Interaction" className='flex-c pt-10'>
-        <div className='flex justify-center m-14 gap-20 text-2xl'>
+      <section data-purpose="Graphs and Data Interaction" className="flex-c pt-10">
+        <div className="flex justify-center m-14 gap-20 text-2xl">
           <div className="flex-c gap-3">
             <img src={barGraph} alt={"Bar Graph"} className="h-[300px] w-[500px]"/>
             <h3>Search Grant Rates By Office</h3>
@@ -56,6 +59,24 @@ export const LandingPage = () => {
             <img src={lineGraph} alt={"Line Graph"} className="h-[300px] w-[500px]"/>
             <h3>Search Grant Rates Over Time</h3>
           </div>
+        </div>
+        <div className="flex align-center mx-auto gap-8">
+          <button className="bg-[#aaa] px-[10px] py-[5px] text-white text-md font-semibold">View the Data</button>
+          <button className="bg-[#aaa] px-[10px] py-[5px] text-white text-md font-semibold">Download the Data</button>
+        </div>
+      </section>
+
+      <section data-purpose="About Section" className="flex" >
+        <div className="flex-1 content-center p-20">
+          <img src={paperStack} alt={"Paper Stack"} className="hrf-img rounded-2xl h-[70%] w-[100%]"/>
+        </div>
+        <div className="flex-1 content-center p-20">
+          <p className="text-xl">
+            Human Rights First has created a search tool to give you a user-friendly way to explore a data set of asylum 
+            decisions between FY 2016 and May 2021 by the USCIS Asylum Office, which we reviewed through a Freedom of 
+            Information Act request. You can search for information on asylum grant rates by year, nationality, and asylum 
+            office, visualize the data with charts and heat maps, and download the data set.
+          </p>
         </div>
       </section>
 
