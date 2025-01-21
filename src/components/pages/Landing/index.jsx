@@ -34,6 +34,10 @@ export const LandingPage = () => {
     window.location.href = url
   };
 
+  const handleViewData = () => {
+    navigate('/graphs')
+  };
+
   return (
     <div className="flex-c w-[100vw] secondary-c">
       
@@ -63,8 +67,8 @@ export const LandingPage = () => {
           </div>
         </div>
         <div data-purpose="Data Interaction Buttons" className="flex align-center mx-auto gap-8">
-          <button className="bg-[#aaa] px-[10px] py-[5px] text-white text-md font-semibold">View the Data</button>
-          <button className="bg-[#aaa] px-[10px] py-[5px] text-white text-md font-semibold">Download the Data</button>
+          <button className="bg-[#aaa] px-[10px] py-[5px] text-white text-md font-semibold" onClick={handleViewData}>View the Data</button>
+          <button className="bg-[#aaa] px-[10px] py-[5px] text-white text-md font-semibold" onClick={downloadCSV}>Download the Data</button>
         </div>
       </section>
 
