@@ -35,7 +35,7 @@ export const LandingPage = () => {
   return (
     <div className="flex-c w-[100vw] secondary-c">
       
-      <section data-purpose="Landing Header" className="flex primary-c pt-4 pb-8">
+      <section data-purpose="Landing Header Section" className="flex primary-c pt-4 pb-8">
         <div className="flex-c mx-auto">
           <h1 className="text-6xl mb-8 text-white">Asylum Office Grant Rate Tracker</h1>
           <h3 className="text-white">
@@ -45,8 +45,8 @@ export const LandingPage = () => {
         </div>
       </section>
 
-      <section data-purpose="Graphs and Data Interaction" className="flex-c pt-10">
-        <div className="flex justify-center m-14 gap-20 text-2xl">
+      <section data-purpose="Graphs and Data Interaction Section" className="flex-c pt-10">
+        <div data-purpose="Graphs and Charts" className="flex justify-center m-14 gap-20 text-2xl">
           <div className="flex-c gap-3">
             <img src={barGraph} alt={"Bar Graph"} className="h-[300px] w-[500px]"/>
             <h3>Search Grant Rates By Office</h3>
@@ -60,7 +60,7 @@ export const LandingPage = () => {
             <h3>Search Grant Rates Over Time</h3>
           </div>
         </div>
-        <div className="flex align-center mx-auto gap-8">
+        <div data-purpose="Data Interaction Buttons" className="flex align-center mx-auto gap-8">
           <button className="bg-[#aaa] px-[10px] py-[5px] text-white text-md font-semibold">View the Data</button>
           <button className="bg-[#aaa] px-[10px] py-[5px] text-white text-md font-semibold">Download the Data</button>
         </div>
@@ -80,23 +80,37 @@ export const LandingPage = () => {
         </div>
       </section>
 
+      <section data-purpose="Disparity Insights Section" className="flex-c gap-16 ">
+        <div data-purpose="Desparity Insights Header">
+          <h3 className="text-5xl">Systemic Disparity Insights</h3>
+        </div>
+        <div data-purpose="Disparity Insights Data" className="flex justify-center m-14 gap-20 text-2xl">
+          <div className="flex-c-1 gap-12">
+            <h3 className="text-4xl">36%</h3>
+            <p className="text-lg">
+              By the end of the Trump administration, the average asylum office grant rate had fallen 36% from an 
+              average of 44 percent in fiscal year 2016 to 28 percent in fiscal year 20202.
+            </p>
+          </div>
+          <div className="flex-c-1 gap-12">
+            <h3 className="text-4xl">5%</h3>
+            <p className="text-lg">The New York asylum office grant rate dropped to 5 percent in fiscal year 2020.</p>
+          </div>
+          <div className="flex-c-1 gap-12">
+            <h3 className="text-4xl">6x Lower</h3>
+            <p className="text-lg">Between fiscal year 2017 and 2020, the New York asylum office's average grant 
+              rate was 6 times lower than the San Francisco asylum office.
+            </p>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 };
 
 /*
-View the Data
-Download the Data
 
-Human Rights First has created a search tool to give you a user-friendly way to explore a data set of asylum decisions between FY 2016 and May 2021 by the USCIS Asylum Office, which we reviewed through a Freedom of Information Act request. You can search for information on asylum grant rates by year, nationality, and asylum office, visualize the data with charts and heat maps, and download the data set.
-
-System Disparity Insights
-36%
-By the end of the Trump administration, the average asylum office grant rate had fallen 36% from an average of 44 percent in fiscal year 206 to 28 percent in fiscal year 2020.
-5%
-The New York asylum office grant rate dropped to 5 percent in the fiscal year 2020.
-6x Lower
-Between fiscal year 2017 and 2020, the New York asylum office's average grant rate was 6 times lower than the San Francisco asylum office.
 
 Read More
 
