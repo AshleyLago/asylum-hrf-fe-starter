@@ -18,7 +18,7 @@ export const LandingPage = () => {
   const { downloadCSV } = useDownloadData();
 
   const scrollToTop = () => {
-    let scrollStep = -window.scrollY / 20; // Adjust the divisor for speed
+    let scrollStep = -window.scrollY / 25; // Adjust the divisor for speed
     let scrollInterval = setInterval(() => {
       if (window.scrollY === 0) {
         clearInterval(scrollInterval);
@@ -30,6 +30,8 @@ export const LandingPage = () => {
 
   const handleReadMore = () => {
     // TODO: navigate to the humanrightsfirst.org homepage
+    const url = "https://humanrightsfirst.org/"
+    window.location.href = url
   };
 
   return (
@@ -72,10 +74,10 @@ export const LandingPage = () => {
         </div>
         <div className="flex-1 content-center p-20">
           <p className="text-xl">
-            Human Rights First has created a search tool to give you a user-friendly way to explore a data set of asylum 
-            decisions between FY 2016 and May 2021 by the USCIS Asylum Office, which we reviewed through a Freedom of 
-            Information Act request. You can search for information on asylum grant rates by year, nationality, and asylum 
-            office, visualize the data with charts and heat maps, and download the data set.
+            Human Rights First has created a search tool to give you a user-friendly way to explore a data set of 
+            asylum decisions between FY 2016 and May 2021 by the USCIS Asylum Office, which we received through a 
+            Freedom of Information Act request. You can search for information on asylum grant rates by year, 
+            nationality, and asylum office, visualize the data with charts and heat maps, and download the data set.
           </p>
         </div>
       </section>
@@ -105,14 +107,14 @@ export const LandingPage = () => {
         </div>
       </section>
 
+      <section data-purpose="Read More Section">
+        <button className="primary-c text-white px-4 py-2" onClick={handleReadMore}>Read More</button>
+      </section>
+
+      <section data-purpose="Back to Top Section" className="p-16">
+        <button className="font-medium" onClick={scrollToTop}>Back To Top ^</button>
+      </section>
+
     </div>
   );
 };
-
-/*
-
-
-Read More
-
-Back to Top ^
-*/
