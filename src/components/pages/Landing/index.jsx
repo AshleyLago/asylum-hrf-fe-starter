@@ -28,12 +28,14 @@ export const LandingPage = () => {
     }, 10); // Adjust the interval time for smoothness
   };
 
+  // Implemented functionality to this function to bring user to humanrightsfirst page
   const handleReadMore = () => {
     // TODO: navigate to the humanrightsfirst.org homepage
     const url = "https://humanrightsfirst.org/"
     window.location.href = url
   };
 
+  // Created this function to bring user to /graphs
   const handleViewData = () => {
     navigate('/graphs')
   };
@@ -104,8 +106,9 @@ export const LandingPage = () => {
           </div>
           <div className="flex-c-1 gap-12">
             <h3 className="text-4xl">6x Lower</h3>
-            <p className="text-lg">Between fiscal year 2017 and 2020, the New York asylum office's average grant 
-              rate was 6 times lower than the San Francisco asylum office.
+            <p className="text-lg">
+              Between fiscal year 2017 and 2020, the New York asylum office's average grant rate was 6 times lower 
+              than the San Francisco asylum office.
             </p>
           </div>
         </div>
