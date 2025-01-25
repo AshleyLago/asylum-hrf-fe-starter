@@ -17,25 +17,27 @@ const useAppContextProvider = () => {
 
   useLocalStorage({ graphData, setGraphData });
 
+  const url = 'https://hrf-asylum-be-b.herokuapp.com/cases';
+
   const getFiscalData = async () => {
-    // TODO: Replace this with functionality to retrieve the data from the fiscalSummary endpoint 
+    // TODO: Replace this with functionality to retrieve the data from the fiscalSummary endpoint
     try {
-      const fiscalDataRes = await axios.get('https://hrf-asylum-be-b.herokuapp.com/cases/fiscalSummary');
-      return fiscalDataRes;
+      const fiscalDataRes = await axios.get(`${url}/fiscalSummary`);
+      return fiscalDataRes.data;
     } catch (error) {
-      console.log("GET Fiscal Data error ", error)
-      return {}
+      console.log("Error with getting Fiscal Data", error);
+      return {};
     }
   };
 
   const getCitizenshipResults = async () => {
     // TODO: Replace this with functionality to retrieve the data from the citizenshipSummary endpoint
     try {
-      const citizenshipRes = await axios.get('https://hrf-asylum-be-b.herokuapp.com/cases/citizenshipSummary');
-      return citizenshipRes;
+      const citizenshipRes = await axios.get(`${url}/citizenshipSummary`);
+      return citizenshipRes.data;
     } catch (error) {
-      console.log("GET Citizenship Results error ", error)
-      return {}
+      console.log("Error with getting Citizenship Results", error);
+      return {};
     }
   };
 
@@ -45,6 +47,19 @@ const useAppContextProvider = () => {
 
   const fetchData = async () => {
     // TODO: fetch all the required data and set it to the graphData state
+    try {
+      const fiscalData = await getFiscalData();
+      const citizenshipResults = await getCitizenshipResults();
+
+      setGraphData({
+        yearResults: fiscalData.yearResults,
+        citizenshipResults: citizenshipResults
+      });
+    } catch (error) {
+      console.log("Fetching Data error ", error);
+    }
+
+    setIsDataLoading(false);
   };
 
   const clearQuery = () => {
