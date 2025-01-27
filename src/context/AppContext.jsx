@@ -5,22 +5,17 @@ import { useLocalStorage } from '../hooks/useLocalStorage.js';
 
 const AppContext = createContext({});
 
-/**
- * TODO: Ticket 2:
- * - Use axios to fetch the data
- * - Store the data
- * - Populate the graphs with the stored data
- */
 const useAppContextProvider = () => {
   const [graphData, setGraphData] = useState(testData);
   const [isDataLoading, setIsDataLoading] = useState(false);
 
   useLocalStorage({ graphData, setGraphData });
 
+  // Variable created to hold the base url for the API
   const url = 'https://hrf-asylum-be-b.herokuapp.com/cases';
 
+  // Retrieves data from the fiscalSummary endpoint
   const getFiscalData = async () => {
-    // TODO: Replace this with functionality to retrieve the data from the fiscalSummary endpoint
     try {
       const fiscalDataRes = await axios.get(`${url}/fiscalSummary`);
       return fiscalDataRes.data;
@@ -30,8 +25,8 @@ const useAppContextProvider = () => {
     }
   };
 
+  // Retrieves data from the citizenshipSummary endpoint
   const getCitizenshipResults = async () => {
-    // TODO: Replace this with functionality to retrieve the data from the citizenshipSummary endpoint
     try {
       const citizenshipRes = await axios.get(`${url}/citizenshipSummary`);
       return citizenshipRes.data;
@@ -45,8 +40,8 @@ const useAppContextProvider = () => {
     setIsDataLoading(true);
   };
 
+  // Puts the yearResults from fiscalData and citizenshipResults into GraphData and stops loading
   const fetchData = async () => {
-    // TODO: fetch all the required data and set it to the graphData state
     try {
       const fiscalData = await getFiscalData();
       const citizenshipResults = await getCitizenshipResults();
