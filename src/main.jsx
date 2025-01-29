@@ -7,21 +7,19 @@ import { Auth0Provider } from '@auth0/auth0-react'; // Added Auth0
 const AUTH_DOMAIN = import.meta.env.VITE_AUTH_DOMAIN;
 const AUTH_CLIENT_ID = import.meta.env.VITE_AUTH_CLIENT_ID;
 
-/**
- * TODO: Ticket 3:
- * Implement authentication using Auth0:
- * - Wrap ProvideAppContext with the Auth Provider from Auth0
- * - Add your credentials from Auth0 to a .env file (AUTH_DOMAIN, AUTH_CLIENT_ID)
- * - Set the domain, clientId, and authorizationParams
- */
 createRoot(document.getElementById('root')).render(
     <Auth0Provider
       domain={AUTH_DOMAIN}
       clientId={AUTH_CLIENT_ID}
       authorizationParams={{ redirect_uri: window.location.origin }}
+      cacheLocation="localstorage"
     >
       <ProvideAppContext>
         <App />
       </ProvideAppContext>
     </Auth0Provider>
+    // Wrapped ProvideAppContext with the Auth Provider
+    // Connected domain and clientId to Auth0 credentials in .env file
+    // Specified location for succesful login/logout in authorizationParams
+    // Added cacheLocation to let user's login session persist on refresh
 );

@@ -3,13 +3,8 @@ import { LoggingButtons } from '../../auth/LoggingButtons.jsx';
 import { NavLink } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react'; // Added Auth0
 
-/**
- * TODO: Ticket 3:
- * Implement authentication using Auth0
- */
 export default function Header() {
-  // TODO: Replace me
-  const {isAuthenticated} = useAuth0;
+  const { isAuthenticated } = useAuth0(); // Pulls authentication state from the Auth0 hook
 
   return (
     <header className='flex w-[100%] primary-c justify-between px-14'>
